@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-navbar color="secondary" [hidden]="!buttonClicked2">
+    
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Senarai Herba                      <!-- Function 3dot kat sini -->
+      <!--<button item-right ion-button type="button" (click)="sort()" class="spbg">Susun abjad</button>
+      <button item-right ion-button type="button" (click)="sort2()" class="spbg">Susun Kod</button> -->
+    
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="susun()">
+        <ion-icon name="repeat"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="onButtonClick()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <!-- Amir fitri -- >
+    <ion-buttons end >
+      <button ion-button (click)="presentPopover($event)">
+        <ion-icon name="more" style="zoom:1.7;"></ion-icon>
+      </button> 
+    </ion-buttons>  -->
+   <!-- Shahrul 
+   <ion-buttons end >
+      <div class="dropdown">
+         <button end class="dropbtn"><ion-icon name="more" style="zoom:1.7;"></ion-icon></button>
+         <div class="dropdown-content">
+         <a href="#" (click)="sort()">Susun Abjad</a>
+         <a href="#" (click)="sort2()">Susun Kod</a>
+         </div>
+       </div>
+     </ion-buttons>  -->
+    
+  </ion-navbar>
+
+  <!-- Search Event -->
+  <div *ngIf="buttonClicked">
+    <ion-grid>
+        <ion-row text-center>
+          <ion-col col-1 style="padding:none">
+              <ion-icon style="zoom:2.0; color:black" name="arrow-round-back" (click)="onButtonClick()"></ion-icon>
+          </ion-col>
+          <ion-col col-11><ion-input [(ngModel)]="terms" placeholder="Carian..."></ion-input></ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <!-- Done Search Event -->
+
+</ion-header>
+
+<ion-content >
+
+    <!-- <ion-searchbar [(ngModel)]="terms"></ion-searchbar> -->
+    <ion-list>
+      <!-- *ngFor="#item of items | order-by:'value'">{{item.value}}  -->
+      <ion-item-sliding *ngFor="let list of lists | search : terms | sort: {property: column, order: order}">
+      <!-- <ion-item-sliding *ngFor="let list of lists | search : terms | sort: {property: title, order: order}"> -->
+          <ion-item  (click)="viewEntry({ record: list })">
+            <ion-thumbnail item-start>
+              <img  class="rounded" [src]="list.imageUrl" />
+            </ion-thumbnail>
+              <ion-row>
+                <ion-col >
+                  <h2>{{list.title}}</h2>
+                </ion-col>
+                <ion-col text-right>
+                    <!-- <button ion-button outline class="small">{{list.hot}}</button> -->
+                    <button class="small">{{list.hot}}</button>
+                </ion-col>
+              </ion-row>
+              
+              <i><h3>{{list.description}}</h3></i>
+              
+          </ion-item>
+          <ion-item-options side="right">
+            
+            <button ion-button color="secondary">
+              <ion-icon name="locate"></ion-icon>
+              Lokasi
+            </button>
+            <!-- <button ion-button color="primary">
+                <ion-icon name="contract"></ion-icon>
+                Imbas QR
+              </button> -->
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+    
+
+</ion-content>

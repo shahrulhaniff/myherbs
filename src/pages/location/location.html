@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Taman Herba UniSZA</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content> <!-- letak dalam ion content: padding class="bg-image" -->
+        <!-- <div style="position: relative; overflow: auto; width: auto; height: auto;"> -->
+          <br>
+            <div text-center>Taman Herba UniSZA Kampus Besut</div>
+          <ion-scroll 
+          scrollX="true" 
+          scrollY="true" 
+          zooming="true" 
+          min-zoom="1.0"
+          max-zoom="2.5"
+          overflow-scroll="false"
+          has-bouncing="false" 
+          style="width: 100%; height: 100%">
+          <!--map -->
+          <div class="map-div"></div>
+            <!-- <img  src="assets/imgs/herb/map.png" alt="bulu" class="pinjang"/> -->
+           
+          <!-- Tester 
+          <img src="assets/imgs/herb/pin.png"  class="pin" /> -->
+
+          <!-- pin,gif & info-->
+          <img src="assets/imgs/herb/pin.png" [ngStyle]="{'top' : showvh, 'left' : showvw}"  style="position: absolute; height: auto; width: 80px;"/>
+          <img src="assets/imgs/herb/pin.gif" [ngStyle]="{'top' : showvh, 'left' : showvw}"  style="position: absolute; height: auto; width: 46px;"/>
+          <p [ngStyle]="{'top' : showvh, 'left' : showvw}" style="position: absolute;">{{showid}}</p>
+        </ion-scroll>
+        <!-- </div> -->
+</ion-content>
+
+<!-- <style>
+  .map-div {
+    width: 2600px;
+    height: 1400px;
+    background: url('./assets/imgs/herb/map.png') no-repeat;
+  }
+</style> -->

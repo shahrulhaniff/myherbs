@@ -1,0 +1,25 @@
+page-specific {
+    .swiper-pagination-bullet {
+      background-color: #fff;
+    }
+    
+  .floating-buttons {
+    z-index: 1;
+    width: 100%;
+    bottom: 50%;
+    text-align: center;
+    position: absolute;
+    //margin-bottom: 40vh;
+    transition: all .4s linear;
+    // background-color: $base-color-transparent;
+  }
+  .floating-buttons button {
+    color: white;
+    min-height: 7vh;
+    text-transform: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgba(13, 131, 131, 0.699);
+  }
+    
+}

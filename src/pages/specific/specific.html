@@ -1,0 +1,197 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <h2 style="color:white; size: 120em">{{showherba}}</h2>
+    <!--<ion-row>
+        <ion-col><h2 style="color:white; size: 120em">{{showherba}}</h2></ion-col>
+        <ion-col><button ion-button (click)="viewLokasi(showherba)" item-right>Lokasi di UniSZA</button></ion-col>
+    </ion-row>  -->
+    
+   <!-- Amir fitri -->
+   <ion-buttons end >
+    <button ion-button id="location" (click)="presentPopover($event)">
+      <ion-icon name="more" style="zoom:1.7;"></ion-icon>
+    </button> 
+  </ion-buttons> 
+  <!-- /AmirFitri -->
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-card>
+        <ion-slides #slider pager="true" autoplay="2000" loop="false">
+            <ion-slide>
+                 <img src="assets/imgs/herb/{{showgambar}}" style="height: 50vh; width: 100vw;" />
+                 <!-- <ion-item color = "secondary">
+                 <h3 center>1</h3>
+                </ion-item> -->
+            </ion-slide>
+            <ion-slide>
+                <img src="assets/imgs/herb/{{showgambar2}}" style="height: 50vh; width: 100vw;" />
+                <!-- <ion-item color = "secondary">
+                  <h3 center>2</h3>
+                 </ion-item> -->
+               
+           </ion-slide>
+           <ion-slide>
+              <img src="assets/imgs/herb/{{showgambar3}}" style="height: 50vh; width: 100vw;" />
+              <!-- <ion-item color = "secondary">
+                <h3 center>3</h3>
+               </ion-item>(click)="navToLocation()"  -->
+         </ion-slide>
+         </ion-slides>
+         <div class="floating-buttons">
+           <!-- *ngFor="let lista of list2"  
+           <button ion-button (click)="viewLokasi({ record: lista  })">Lokasi</button>  --> 
+           <!-- <button ion-button (click)="viewLokasi(showherba)">Lokasi</button>  -->
+          </div>
+         
+</ion-card>
+<ion-card>
+
+  
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="category" color="listo">
+    <ion-segment-button value="pengenalan">
+    Pengenalan
+    </ion-segment-button>
+    <ion-segment-button value="khasiat">
+    Khasiat
+    </ion-segment-button>
+    <ion-segment-button value="kajian">
+    Kajian Saintifik
+    </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+
+  <div [ngSwitch]="category">
+    <div *ngSwitchCase="'pengenalan'" ng-selected="selected">
+        
+        <ion-item color="secondary">
+            <p>Umum</p>
+          </ion-item>
+      <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <p>Nama Saintifik</p>
+        </ion-col>
+        <ion-col>
+            <p><i>{{shownamasainsi}}</i> {{shownamasains}}</p>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <p>Famili</p>
+          </ion-col>
+          <ion-col>
+              <p>{{showherba}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <p>Nama Lain</p>
+            </ion-col>
+            <ion-col>
+                <p>{{shownamalain}}</p>
+              </ion-col>
+          </ion-row>
+        </ion-card-content>
+          <ion-item color="secondary">
+            <p>Morfologi</p>
+          </ion-item>
+          <ion-card-content>
+          <ion-row>
+            <ion-col>
+            <ul>
+              <li>
+              <p>{{showmorf1}}</p>
+            </li>
+            <li *ngIf="showmorf2">
+                <p>{{showmorf2}}</p>
+              </li>
+              <li *ngIf="showmorf3">
+                  <p>{{showmorf3}}</p>
+                </li>
+                <li *ngIf="showmorf4">
+                    <p>{{showmorf4}}</p>
+                  </li>
+                  <li *ngIf="showmorf5">
+                      <p>{{showmorf5}}</p>
+                    </li>
+                    <li *ngIf="showmorf6">
+                        <p>{{showmorf6}}</p>
+                      </li>
+          </ul>
+            </ion-col>
+          </ion-row>
+            </ion-card-content>
+              <ion-item color="secondary">
+               Habitat 
+              </ion-item>
+              <ion-card-content>
+              <p>{{showhabitat}}</p>  
+            </ion-card-content>  
+    </div>
+
+
+    <div *ngSwitchCase="'khasiat'" ng-selected="selected">
+      <ion-item color="secondary">
+        Bahagian Diguna
+      </ion-item>
+      <ion-card-content padding>
+        <p>{{showguna}}</p>
+        </ion-card-content>
+
+        <ion-item color="secondary">
+            Kegunaan secara tradisional
+          </ion-item>
+          <ion-card-content>
+            <br>
+            <p>{{showks}}</p>
+            <br>
+            <p>{{showks2}}</p>
+            <br>
+            <p>{{showks3}}</p>            
+            </ion-card-content>
+    </div>
+
+    <div *ngSwitchCase="'kajian'" ng-selected="selected">
+        <ion-item color="secondary">
+            Kandungan Kimia
+          </ion-item>
+          <ion-card-content>
+            <p>{{showkimia}}</p>
+            </ion-card-content>
+
+        <ion-item color="secondary">
+          Aktiviti Biologi
+        </ion-item>
+        <ion-card-content>
+          <p>{{showab}},{{showab2}},{{showab3}},{{showab4}},{{showab5}}</p>
+          </ion-card-content>
+          
+          <ion-item color="secondary">
+           Rujukan
+          </ion-item>
+          <ion-card-content>
+          <ion-row>
+            <ion-col><p>{{showb}}</p></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col><p>{{showb2}}</p></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col><p>{{showb3}}</p></ion-col>
+          </ion-row>
+        </ion-card-content>
+
+      </div>
+
+  </div>
+
+      </ion-card>
+</ion-content>
