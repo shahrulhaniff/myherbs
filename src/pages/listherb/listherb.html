@@ -11,12 +11,12 @@
     
     </ion-title>
 
-    <ion-buttons end>
+    <ion-buttons end class="pads">
       <button ion-button icon-only color="royal" (click)="susun()">
         <ion-icon name="repeat"></ion-icon>
       </button>
     </ion-buttons>
-    <ion-buttons end>
+    <ion-buttons end class="pad">
       <button ion-button icon-only color="royal" (click)="onButtonClick()">
         <ion-icon name="search"></ion-icon>
       </button>
@@ -42,21 +42,21 @@
 
   <!-- Search Event -->
   <div *ngIf="buttonClicked">
-    <ion-grid>
-        <ion-row text-center>
-          <ion-col col-1 style="padding:none">
-              <ion-icon style="zoom:2.0; color:black" name="arrow-round-back" (click)="onButtonClick()"></ion-icon>
+    
+        <ion-row text-center center>
+          <ion-col col-1 class="ran" center >
+              <ion-icon style="zoom:1.6" color="secondary"  name="arrow-round-back" (click)="onButtonClick()" text-center></ion-icon>
           </ion-col>
-          <ion-col col-11><ion-input [(ngModel)]="terms" placeholder="Carian..."></ion-input></ion-col>
+          <ion-col col-10><ion-input [(ngModel)]="terms" placeholder="Carian..."></ion-input></ion-col>
         </ion-row>
-      </ion-grid>
+    
     </div>
     <!-- Done Search Event -->
 
 </ion-header>
 
 <ion-content >
-
+<ion-card>
     <!-- <ion-searchbar [(ngModel)]="terms"></ion-searchbar> -->
     <ion-list>
       <!-- *ngFor="#item of items | order-by:'value'">{{item.value}}  -->
@@ -93,6 +93,6 @@
         </ion-item-sliding>
       </ion-list>
 
-    
+    </ion-card>
 
 </ion-content>
