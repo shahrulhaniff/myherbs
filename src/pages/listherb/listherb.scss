@@ -23,7 +23,7 @@ page-listherb {
 
 .padding{
     padding-top: 1px;
-    padding-bottom: 1px;
+    padding-bottom: 0px;
 }
 
 
@@ -83,4 +83,20 @@ page-listherb {
   
   .dropdown:hover .dropbtn {
     background-color: forestgreen;
+  }
+
+  .ran{
+    vertical-align: middle;
+    display: flex!important;
+    align-content: center!important;
+    align-items: center!important;
+    padding-left: 13px
+  }
+
+  .pad{
+    padding-right: 5px;
+  }
+
+  .pads{
+    padding-right: 3px;
   }
