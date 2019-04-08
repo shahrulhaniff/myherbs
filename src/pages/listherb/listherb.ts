@@ -173,7 +173,7 @@ exitApp(){
       description: 'Momordica charantia L.'
     },
     { id : 'HOT016-Serai Makan',
-      imageUrl: 'assets/imgs/herb/HOT0016-Serai Makan/HOT0016-1.jpg',
+      imageUrl: 'assets/imgs/herb/HOT0016-Serai/HOT0016-3.jpg',
       hot: 'HOT016',
       title: 'Serai Makan',
       description: 'Cymbopogon citratus (DC) Stapf.'
@@ -193,8 +193,8 @@ exitApp(){
     { id : 'HOT019-Kemangi',
       imageUrl: 'assets/imgs/herb/HOT0019-Selasih/HOT00019-1.jpg',
       hot: 'HOT019',
-      title: 'Kemangi',
-      description: 'Ocimum basilicum L. '
+      title: 'Selasih',
+      description: 'Ocimum basilicum L.'
     },
     { id : 'HOT020-Matapelanduk',
       imageUrl: 'assets/imgs/herb/HOT0020-Mata pelanduk/HOT0020-2.jpg',

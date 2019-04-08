@@ -22,27 +22,22 @@
 
 <ion-content>
     <ion-card>
+
         <ion-slides #slider pager="true" autoplay="2000" loop="false">
-            <ion-slide>
+            <ion-slide *ngIf="showgambar">
                  <img src="assets/imgs/herb/{{showgambar}}" style="height: 50vh; width: 100vw;" />
-                 <!-- <ion-item color = "secondary">
-                 <h3 center>1</h3>
-                </ion-item> -->
             </ion-slide>
-            <ion-slide>
+            <ion-slide *ngIf="showgambar2">
                 <img src="assets/imgs/herb/{{showgambar2}}" style="height: 50vh; width: 100vw;" />
-                <!-- <ion-item color = "secondary">
-                  <h3 center>2</h3>
-                 </ion-item> -->
-               
            </ion-slide>
-           <ion-slide>
+           <ion-slide  *ngIf="showgambar3">
               <img src="assets/imgs/herb/{{showgambar3}}" style="height: 50vh; width: 100vw;" />
-              <!-- <ion-item color = "secondary">
-                <h3 center>3</h3>
-               </ion-item>(click)="navToLocation()"  -->
+         </ion-slide>
+         <ion-slide>
+            <img src="assets/imgs/susun.png" style="height: 50vh; width: 100vw;" />
          </ion-slide>
          </ion-slides>
+
          <div class="floating-buttons">
            <!-- *ngFor="let lista of list2"  
            <button ion-button (click)="viewLokasi({ record: lista  })">Lokasi</button>  --> 
