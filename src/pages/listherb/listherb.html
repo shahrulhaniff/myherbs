@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Senarai Herba                      <!-- Function 3dot kat sini -->
+      Senarai Herba <!-- Function 3dot kat sini -->
       <!--<button item-right ion-button type="button" (click)="sort()" class="spbg">Susun abjad</button>
       <button item-right ion-button type="button" (click)="sort2()" class="spbg">Susun Kod</button> -->
     
@@ -42,20 +42,17 @@
 
   <!-- Search Event -->
   <div *ngIf="buttonClicked">
-    
         <ion-row text-center center>
           <ion-col col-1 class="ran" center >
               <ion-icon style="zoom:1.6" color="secondary"  name="arrow-round-back" (click)="onButtonClick()" text-center></ion-icon>
           </ion-col>
           <ion-col col-10><ion-input [(ngModel)]="terms" placeholder="Carian..."></ion-input></ion-col>
         </ion-row>
-    
     </div>
     <!-- Done Search Event -->
-
 </ion-header>
 
-<ion-content >
+<ion-content>
 <ion-card>
     <!-- <ion-searchbar [(ngModel)]="terms"></ion-searchbar> -->
     <ion-list>
@@ -64,10 +61,10 @@
       <!-- <ion-item-sliding *ngFor="let list of lists | search : terms | sort: {property: title, order: order}"> -->
           <ion-item  (click)="viewEntry({ record: list })">
             <ion-thumbnail item-start>
-              <img  class="rounded" [src]="list.imageUrl" />
+              <img  class="rounded" [src]="list.imageUrl"  onerror="this.onerror=null;this.src='assets/imgs/nopic.png';"/>
             </ion-thumbnail>
               <ion-row>
-                <ion-col >
+                <ion-col>
                   <h2>{{list.title}}</h2>
                 </ion-col>
                 <ion-col text-right>
@@ -92,7 +89,5 @@
           </ion-item-options>
         </ion-item-sliding>
       </ion-list>
-
     </ion-card>
-
 </ion-content>

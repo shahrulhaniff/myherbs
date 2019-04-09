@@ -25,16 +25,16 @@
 
         <ion-slides #slider pager="true" autoplay="2000" loop="false">
             <ion-slide *ngIf="showgambar">
-                 <img src="assets/imgs/herb/{{showgambar}}" style="height: 50vh; width: 100vw;" />
+                 <img src="assets/imgs/herb/{{showgambar}}" alt="Tiada Gambar" style="height: 50vh; width: 100vw;"  onerror="this.onerror=null;this.src='assets/imgs/nopic.png';"/>
             </ion-slide>
             <ion-slide *ngIf="showgambar2">
-                <img src="assets/imgs/herb/{{showgambar2}}" style="height: 50vh; width: 100vw;" />
+                <img src="assets/imgs/herb/{{showgambar2}}"  alt="Tiada Gambar" style="height: 50vh; width: 100vw;"  onerror="this.onerror=null;this.src='assets/imgs/nopic.png';"/>
            </ion-slide>
            <ion-slide  *ngIf="showgambar3">
-              <img src="assets/imgs/herb/{{showgambar3}}" style="height: 50vh; width: 100vw;" />
+              <img src="assets/imgs/herb/{{showgambar3}}"  alt="Tiada Gambar" style="height: 50vh; width: 100vw;"  onerror="this.onerror=null;this.src='assets/imgs/nopic.png';"/>
          </ion-slide>
          <ion-slide>
-            <img src="assets/imgs/susun.png" style="height: 50vh; width: 100vw;" />
+            <img src="assets/imgs/herb/{{showgambar}}" style="height: 50vh; width: 100vw;" onerror="this.onerror=null;this.src='assets/imgs/nopic.png';"/>
          </ion-slide>
          </ion-slides>
 
